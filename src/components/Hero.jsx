@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import StarBorder from './StarBorder'
 
 const Hero = () => {
   const heroRef = useRef(null)
@@ -59,36 +60,43 @@ const Hero = () => {
         ref={logoContainerRef}
         className="flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
-        <div className="bg-black/20 backdrop-blur-md rounded-xl p-16 shadow-[0_0_50px_rgba(140,94,255,0.2)]">
-          {/* Logo Container */}
-          <div className="flex items-center justify-center">
-            {/* EVOLVE text */}
-            <span 
-              ref={evolveRef}
-              className="text-white text-7xl sm:text-8xl lg:text-9xl font-bold tracking-normal"
-              style={{ opacity: 0, transform: 'translateY(-20px)' }}
-            >
-              EV
+        <StarBorder
+          color="#A584FF"
+          speed="8s"
+          thickness={2}
+          className="transition-all duration-300 hover:scale-105"
+        >
+          <div className="py-16 px-20">
+            {/* Logo Container */}
+            <div className="flex items-center justify-center">
+              {/* EVOLVE text */}
               <span 
-                ref={eightRef}
-                className="inline-block text-[#A584FF]"
-                style={{ opacity: 0, transform: 'scale(0.5)' }}
+                ref={evolveRef}
+                className="text-white text-7xl sm:text-8xl lg:text-9xl font-bold tracking-normal"
+                style={{ opacity: 0, transform: 'translateY(-20px)' }}
               >
-                8
+                EV
+                <span 
+                  ref={eightRef}
+                  className="inline-block text-[#A584FF]"
+                  style={{ opacity: 0, transform: 'scale(0.5)' }}
+                >
+                  8
+                </span>
+                LVE
               </span>
-              LVE
-            </span>
+            </div>
+            
+            {/* STUDIO text */}
+            <div 
+              ref={studioRef}
+              className="text-white text-4xl sm:text-5xl tracking-[0.3em] text-center font-light mt-3"
+              style={{ opacity: 0, transform: 'translateY(20px)' }}
+            >
+              STUDIO
+            </div>
           </div>
-          
-          {/* STUDIO text */}
-          <div 
-            ref={studioRef}
-            className="text-white text-4xl sm:text-5xl tracking-[0.3em] text-center font-light mt-3"
-            style={{ opacity: 0, transform: 'translateY(20px)' }}
-          >
-            STUDIO
-          </div>
-        </div>
+        </StarBorder>
       </div>
       
       {/* Footer text */}

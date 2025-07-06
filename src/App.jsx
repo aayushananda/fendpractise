@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import Info from './components/Info'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
+import SplashCursor from './components/SplashCursor'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -10,14 +12,22 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+  const heroRef = useRef(null);
+  const footerRef = useRef(null);
+  
   return (
-   <>
-   <Hero/>
-   <About/>
-   <Info/>
-   <Contact/>
-   <About/>
-   </>
+    <>
+      <div ref={heroRef} className="splash-section">
+        <Hero/>
+      </div>
+      <About/>
+      <Info/>
+      <Contact/>
+      <div ref={footerRef} className="splash-section">
+        <Footer/>
+      </div>
+      <SplashCursor targetRefs={[heroRef, footerRef]} />
+    </>
   )
 }
 

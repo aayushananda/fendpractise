@@ -45,16 +45,16 @@ const About = () => {
         className="absolute inset-0 flex flex-col justify-center items-center z-10"
       >
         {/* Agency description content with ScrambleText effect in two separate lines */}
-        <div className="flex flex-col justify-center items-center gap-3 md:gap-5 px-6">
+        <div className="flex flex-col justify-center items-center gap-4 md:gap-6 px-6">
           <ScrambledText
             radius={100}
             duration={1.2}
             speed={0.5}
             scrambleChars=".:"
-            className="text-center text-lg md:text-3xl lg:text-3xl whitespace-nowrap"
+            className="text-center text-xl md:text-4xl lg:text-4xl font-light text-white/90 whitespace-nowrap tracking-wide"
           >
-            <p>We are an Independent digital agency</p>
-            Passionate about modern age technologies
+            <p className="mb-2">We are an Independent digital agency</p>
+            <p className="text-lg md:text-3xl lg:text-3xl font-medium text-white/80">Passionate about modern age technologies</p>
           </ScrambledText>
         </div>
       </div>
