@@ -72,7 +72,7 @@ const Hero = () => {
               {/* EVOLVE text */}
               <span 
                 ref={evolveRef}
-                className="text-white text-7xl sm:text-8xl lg:text-9xl font-bold tracking-normal"
+                className="text-white text-6xl sm:text-7xl lg:text-8xl font-bold tracking-normal"
                 style={{ opacity: 0, transform: 'translateY(-20px)' }}
               >
                 EV
